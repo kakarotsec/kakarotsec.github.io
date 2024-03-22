@@ -1,0 +1,348 @@
+body {
+  font-family: 'VT323', monospace;
+  color: #8AE233; 
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: #000000; 
+  overflow: hidden; 
+}
+
+.terminal {
+  position: relative;
+  z-index: 2;
+  overflow: hidden; 
+  background: #000; 
+}
+
+@keyframes glitch-animation {
+  0%, 25%, 100% {
+    text-shadow: none;
+  }
+  5%, 15%, 25% {
+    text-shadow: -1px 1px 2px rgba(138, 226, 51, 0.2),
+                 1px -1px 2px rgba(138, 226, 51, 0.2),
+                 -1px -1px 2px rgba(138, 226, 51, 0.2),
+                 1px 1px 2px rgba(138, 226, 51, 0.2);
+  }
+  10%, 20% {
+    text-shadow: -1px -1px 2px rgba(138, 226, 51, 0.2),
+                 1px 1px 2px rgba(138, 226, 51, 0.2),
+                 -1px 1px 2px rgba(138, 226, 51, 0.2),
+                 1px -1px 2px rgba(138, 226, 51, 0.2);
+  }
+}
+
+.content {
+  white-space: pre-line; 
+  font-size: 15px;
+  padding-left: 16px;
+  line-height: 1.5; 
+  animation: glitch-animation 2s infinite alternate;
+}
+
+
+.username {
+  color: #0066ff; 
+  font-weight: bold;
+  font-size: 17px;
+}
+
+.command {
+  color: #E5E4E2; 
+  font-size: 16px;
+}
+
+.buttons {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  z-index: 1;
+}
+
+.button {
+  padding: 7px 14px;
+  background-color: transparent;
+  color: #0066ff; 
+  margin-left: 10px;
+  cursor: pointer;
+  border: none;
+  border-radius: 0;
+  font-size: 14px;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  transition: color 0.3s ease, transform 0.3s ease;
+  outline: none;
+  box-shadow: none;
+  font-family: 'VT323', monospace;
+}
+
+.button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, #f0f0f0 20%, transparent 20%);
+  background-size: 300% 300%;
+  animation: glitch 1.5s infinite alternate;
+}
+
+@keyframes glitch {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(-2px) skewX(5deg);
+  }
+  40% {
+    transform: translateX(2px) skewX(-5deg);
+  }
+  60% {
+    transform: translateX(-2px) skewX(5deg);
+  }
+  80% {
+    transform: translateX(2px) skewX(-5deg);
+  }
+}
+
+.button:hover {
+  color: #55aaff; 
+}
+
+
+.profile-container {
+  position: absolute;
+  bottom: 15px;
+  right: 65px;
+  width: 202px;
+  height: 202px;
+  overflow: hidden;
+  border-radius: 50%;
+  transform-style: preserve-3d; 
+  border: 2px solid #6A5ACD; 
+  background-color: #0b0c10; 
+}
+
+.profile-pic {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  z-index: 1;
+  transform: translateZ(25px); 
+  filter: brightness(1.0) contrast(1.1) saturate(100%); 
+}
+
+.profile-glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  box-shadow: 0 0 30px 15px rgba(255, 255, 255, 0.3), 0 0 50px 20px rgba(255, 255, 255, 0.2); 
+  z-index: 2;
+}
+
+
+@media only screen and (min-width: 430px) and (max-width: 932px) {
+  .content {
+    font-size: 16px; 
+    white-space: pre-line;
+    padding-left: 11px;
+  }
+  
+  .username {
+    font-weight: bold;
+    font-size: 14px;
+  }
+  
+  .command {
+    font-size: 14px;
+  }
+
+  .buttons {
+    top: 17px;
+    right: -5px; 
+    display: flex; 
+    justify-content: space-between; 
+  }
+  
+  .button {
+    padding: 7px; 
+    font-size: 12px;
+    margin-left: -3px;
+  }
+
+  .profile-container {
+    width: 180px;
+    height: 180px; 
+    bottom: 15px;
+    right: 10px;
+    position: absolute;
+  }
+}
+
+@media only screen and (min-width: 390px) and (max-width: 844px) {
+  
+  .content {
+    font-size: 16px;
+    white-space: pre-line;
+    padding-left: 11px;
+  }
+
+  .username {
+    font-weight: bold;
+    font-size: 14px;
+  }
+  
+  .command {
+    font-size: 14px;
+  }
+  
+  .buttons {
+    top: 18px;
+    right: 3px;
+    display: flex; 
+    justify-content: space-between; 
+  }
+  
+  .button {
+    padding: 7px;  
+    font-size: 12px;
+    margin-left: -3px; 
+  }
+
+  .profile-container {
+    width: 180px;
+    height: 180px; 
+    bottom: 15px;
+    right: 10px;
+    position: absolute;
+  }
+}
+
+@media only screen and (min-width: 393px) and (max-width: 786px) {
+  
+  .content {
+    font-size: 15px; 
+    white-space: pre-line;
+    padding-left: 11px;
+  }
+
+  .username {
+    font-weight: bold;
+    font-size: 14px;
+  }
+  
+  .command {
+    font-size: 14px;
+  }
+  
+  .buttons {
+    top: 18px;
+    right: 3px;
+    display: flex; 
+    justify-content: space-between; 
+  }
+  
+  .button {
+    padding: 7px;  
+    font-size: 11px;
+    margin-left: -3px;  
+  }
+
+  .profile-container {
+    width: 179px; 
+    height: 179px;
+    bottom: 15px;
+    right: 10px;
+    position: absolute;
+  }
+}
+
+@media only screen and (min-width: 360px) and (max-width: 640px) {
+
+    .content {
+    font-size: 12px; 
+    white-space: pre-line;
+    padding-left: 11px;
+  }
+
+  .username {
+    font-weight: bold;
+    font-size: 14px;
+  }
+  
+  .command {
+    font-size: 14px;
+  }
+  
+  .buttons {
+    top: 15px;
+    right: 5px;
+    display: flex; 
+    justify-content: space-between; 
+  }
+  
+  .button {
+    padding: 9px; 
+    font-size: 10px;
+    margin-left: -6px;  
+  }
+
+  .profile-container {
+    width: 155px; 
+    height: 155px;
+    bottom: 15px;
+    right: 10px;
+    position: absolute;
+  }
+}
+
+@media only screen and (min-width: 412px) and (max-width: 892px) {
+  
+  .content {
+    font-size: 12px; 
+    white-space: pre-line;
+    padding-left: 11px;
+  }
+
+  .username {
+    font-weight: bold;
+    font-size: 15px;
+  }
+  
+  .command {
+    font-size: 15px;
+  }
+  
+  .buttons {
+    top: 14px;
+    right: 6px;
+    display: flex; 
+    justify-content: space-between; 
+  }
+  
+  .button {
+    padding: 11px; 
+    font-size: 11px;
+    margin-left: -6px;  
+  }
+
+  .profile-container {
+    width: 155px; 
+    height: 155px;
+    bottom: 15px;
+    right: 10px;
+    position: absolute;
+  }
+}

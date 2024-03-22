@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Contact</title>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #000;
+            color: #0F0;
+            font-family: 'VT323', monospace;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container {
+            width: 80%;
+            margin: 50px auto;
+            text-align: center;
+        }
+        h1 {
+            font-size: 50px; 
+            margin-bottom: 30px;
+        }
+        p {
+            font-size: 21px; 
+            margin-bottom: 50px;
+        }
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 50px;
+        }
+        .contact-links a {
+            color: #0F0;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 24px;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            padding: 10px 20px;
+            border-radius: 20px;
+            display: inline-block;
+        }
+        .contact-links a:hover {
+            background-color: #0F0;
+            color: #000;
+            border-color: #0F0;
+        }
+        .back-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: #0F0;
+            border: 2px solid transparent;
+            padding: 14px 20px; 
+            border-radius: 20px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        
+        }
+        .back-btn:hover {
+            background-color: #0F0;
+            color: #000;
+            border-color: #0F0;
+        }
+
+
+
+        @media only screen and (max-width: 768px) {
+    .container {
+        width: 90%;
+        margin: 30px auto;
+    }
+    h1 {
+        font-size: 40px;
+        margin-bottom: 20px;
+    }
+    p {
+        font-size: 18px;
+        margin-bottom: 40px;
+    }
+    .contact-links {
+        flex-wrap: wrap;
+        margin-bottom: 40px;
+    }
+    .contact-links a {
+        font-size: 20px;
+        margin: 0 10px;
+        padding: 8px 16px;
+    }
+    .back-btn {
+        padding: 12px 16px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .container {
+        width: 95%;
+        margin: 20px auto;
+    }
+    h1 {
+        font-size: 30px;
+        margin-bottom: 15px;
+    }
+    p {
+        font-size: 16px;
+        margin-bottom: 30px;
+    }
+    .contact-links {
+        margin-bottom: 30px;
+    }
+    .contact-links a {
+        font-size: 18px;
+        margin: 0 8px;
+        padding: 6px 12px;
+    }
+    .back-btn {
+        padding: 10px 14px;
+    }
+}
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-btn">Back</a>
+        <h1>Contact</h1>
+        <p>Feel free to reach out to me using the following methods</p>
+        <div class="contact-links">
+            <a href="rifataljubaer2@gmail.com">Email</a>
+            <a href="https://www.linkedin.com/in/rifat-al-jubayer" target="_blank">LinkedIn</a>
+            <a href="https://www.facebook.com/rifataljubayer.1" target="_blank">Facebook</a>
+            <a href="https://x.com/Tayn511" target="_blank">Twitter</a>
+        </div>
+    </div>
+</body>
+</html>
